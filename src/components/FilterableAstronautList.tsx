@@ -14,9 +14,7 @@ interface FilterableAstronautListProps {
 export default function FilterableAstronautList({ astronauts }: FilterableAstronautListProps) {
   const [filter, setFilter] = useState<string | null>(null);
 
-  const filteredAstronauts = filter
-    ? astronauts.filter(astronaut => astronaut.craft === filter)
-    : astronauts;
+  const filteredAstronauts = filter ? astronauts.filter(astronaut => astronaut.craft === filter): astronauts;
 
   return (
     <div>
@@ -26,7 +24,7 @@ export default function FilterableAstronautList({ astronauts }: FilterableAstron
         <button onClick={() => setFilter('Tiangong')}>Tiangong</button>
       </div>
 
-      <p>Astronauts {filter ? `aboard ${filter}` : 'currently in space'}:</p>
+      <p>Astronauts {filter ? `aboard ${filter}` : 'currently in space'}</p>
       <ul>
         {filteredAstronauts.map((astronaut) => (
           <li key={astronaut.name}>
