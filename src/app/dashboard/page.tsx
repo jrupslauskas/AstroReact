@@ -6,7 +6,6 @@ export default async function Dashboard () {
 
   return (
     <main>
-      <h1>AstroReact</h1>
       <p>Number of astronauts in space: {data.number}</p>
       <FilterableAstronautList astronauts={data.people} />
     </main>

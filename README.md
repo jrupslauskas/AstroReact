@@ -1,6 +1,8 @@
 # AstroReact
 Astronaut based learning with React and Nextjs
 
+Run with npm run dev
+
 To Do
 Better handling for failing to fetch api data (elegant on page vs page failure)
 Make a universal header
