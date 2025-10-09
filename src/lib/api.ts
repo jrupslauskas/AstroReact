@@ -4,13 +4,36 @@ export interface AstronautsResponse {
   message: string;
 }
 
+export interface IssPositionResponse {
+    timestamp: number;
+    issPosition: {
+        latitude: string;
+        longitude: string;
+    }
+  message: string;
+}
+
 export async function getAstronautsInSpace(): Promise<AstronautsResponse> {
   const response = await fetch('http://api.open-notify.org/astros.json', {
+   // Revalidate this data every hour
     next: { revalidate: 3600 }
   });
 
   if (!response.ok) {
     throw new Error('Failed to fetch astronauts data');
+  }
+
+  return response.json();
+}
+
+export async function getPositionOfIss(): Promise<IssPositionResponse> {
+  const response = await fetch('http://api.open-notify.org/iss-now.json', {
+    // Revalidate this data every 10 seconds
+    next: { revalidate: 10 }
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch ISS position data');
   }
 
   return response.json();
