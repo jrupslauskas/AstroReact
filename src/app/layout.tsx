@@ -1,4 +1,4 @@
-import Header from '@/components/Header'
+import Header from '@/components/navigation/Header'
 import { ReactNode } from 'react';
 
 export default function RootLayout({

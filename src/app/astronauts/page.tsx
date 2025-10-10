@@ -1,7 +1,7 @@
 import { getAstronautsInSpace } from '@/lib/api';
-import FilterableAstronautList from '@/components/FilterableAstronautList';
+import FilterableAstronautList from '@/components/astronauts/FilterableAstronautList';
 
-export default async function Dashboard () {
+export default async function Astronauts () {
   const data = await getAstronautsInSpace();
 
   return (

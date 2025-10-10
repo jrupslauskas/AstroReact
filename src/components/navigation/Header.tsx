@@ -10,7 +10,8 @@ export default function Header() {
         <nav>
             <ul>
                 <li><Link href="/">Home</Link></li>
-                <li><Link href="/dashboard">Dashboard</Link></li>
+                <li><Link href="/astronauts">Astronauts</Link></li>
+                <li><Link href="/iss">ISS Position</Link></li>
             </ul>
         </nav>
       </header>

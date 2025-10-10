@@ -6,10 +6,10 @@ export interface AstronautsResponse {
 
 export interface IssPositionResponse {
     timestamp: number;
-    issPosition: {
+    iss_position: {
         latitude: string;
         longitude: string;
-    }
+    };
   message: string;
 }
 
@@ -26,7 +26,7 @@ export async function getAstronautsInSpace(): Promise<AstronautsResponse> {
   return response.json();
 }
 
-export async function getPositionOfIss(): Promise<IssPositionResponse> {
+export async function getIssPosition(): Promise<IssPositionResponse> {
   const response = await fetch('http://api.open-notify.org/iss-now.json', {
     // Revalidate this data every 10 seconds
     next: { revalidate: 10 }
