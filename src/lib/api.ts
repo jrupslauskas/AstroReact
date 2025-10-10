@@ -28,8 +28,8 @@ export async function getAstronautsInSpace(): Promise<AstronautsResponse> {
 
 export async function getIssPosition(): Promise<IssPositionResponse> {
   const response = await fetch('http://api.open-notify.org/iss-now.json', {
-    // Revalidate this data every 10 seconds
-    next: { revalidate: 10 }
+    // Revalidate this data every 15 seconds
+    next: { revalidate: 15 }
   });
 
   if (!response.ok) {

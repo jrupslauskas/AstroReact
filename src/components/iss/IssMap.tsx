@@ -18,7 +18,6 @@ export default function IssMap() {
   useEffect(() => {
     const fetchIssPosition = async () => {
       try {
-        // Only show full loading state on initial load
         if (!lastPositionRef.current) {
           setLoading(true);
         } else {
@@ -45,8 +44,7 @@ export default function IssMap() {
 
     fetchIssPosition();
 
-    // Poll less frequently to account for latency
-    const interval = setInterval(fetchIssPosition, 15000); // Increased to 15s
+    const interval = setInterval(fetchIssPosition, 15000); // 15s
     return () => clearInterval(interval);
   }, []);
 
