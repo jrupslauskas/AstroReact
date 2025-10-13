@@ -14,7 +14,7 @@ export default function TileContainer({ astronauts }: TileContainerProps) {
   const [filter, setFilter] = useState<string | null>(null);
 
   // Get unique crafts for filter buttons
-  const crafts = [...new Set(astronauts.map(a => a.craft))];
+  const crafts = [...new Set(astronauts.map(astronauts => astronauts.craft))];
 
   return (
     <div>
@@ -24,7 +24,7 @@ export default function TileContainer({ astronauts }: TileContainerProps) {
         </button>
 
         {crafts.map(craft => {
-          const count = astronauts.filter(a => a.craft === craft).length;
+          const count = astronauts.filter(astronauts => astronauts.craft === craft).length;
           return (
             <button
               key={craft}
